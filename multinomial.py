@@ -3,7 +3,6 @@
 
 import random
 from random import randint
-from random import seed
 def multinomial_sample(n,p,k=1):
     '''
     This function
