@@ -64,6 +64,9 @@ def encrypt_message(message,fname):
     # check that every element in final_list is unique
     assert len(final_list) == len(set(final_list))
 
+    # close file
+    file.close()
+
     return final_list
 
 def decrypt_message(inlist,fname):
@@ -76,5 +79,44 @@ def decrypt_message(inlist,fname):
     :return: string decrypted message
     '''
 
+    # check that filename is str and inlist is list
+    assert type(fname) == str
+    assert type(inlist) == list
 
-    pass
+    # check that every element in inlist is tuple
+    for i in range(len(inlist)):
+        assert type(inlist[i]) == tuple
+
+    # check that file exists
+    assert os.path.isfile(fname)
+
+    # open the file
+    file = open(fname, 'r')
+
+    # store the lines of the text in a list
+    list_of_lines = []
+    for i, lines in enumerate(file):
+        list_of_lines.append(lines)
+
+    list_of_words = []
+    for i in range(len(list_of_lines)):
+        word = list_of_lines[i].split()
+        # remove punctuation and make lowercase
+        punctuations = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+        for j in range(len(word)):
+            word[j] = word[j].lower()
+            for char in word[j]:
+                if char in punctuations:
+                    word[j] = word[j].replace(char, "")
+        list_of_words.append(word)
+
+    # store the word in the return message
+    final_string = ''
+    for tup in range(len(inlist)):
+        string = list_of_words[inlist[tup][0]][inlist[tup][1]]
+        final_string = final_string + string + ' '
+
+    #close file
+    file.close()
+
+    return final_string
