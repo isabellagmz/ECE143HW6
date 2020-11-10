@@ -50,5 +50,3 @@ def split_by_n(fname,n=3):
 
     # close the file
     original_file.close()
-
-    return
