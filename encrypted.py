@@ -58,17 +58,20 @@ def encrypt_message(message,fname):
 
         in_list = True
         while in_list:
-            try:
-                # generating a random number
-                rand_int = randint(0,len(temp)-1)
-                # check that entry is not in list
-                if temp[rand_int] not in final_list:
-                    final_list.append(temp[rand_int])
-                    in_list = False
-            except ValueError:
-                None
+            # generating a random number
+            rand_int = randint(0,len(temp)-1)
+            # check that entry is not in list
+            if temp[rand_int] not in final_list:
+                final_list.append(temp[rand_int])
+                in_list = False
+            else:
+                # if already in list, remove element
+                temp.pop(rand_int)
+                # check that it is possible to be unique entry in list
+                assert len(temp) > 0
+
         # empty temp
-        temp = []
+        temp.clear()
 
     # check that every element in final_list is unique
     assert len(final_list) == len(set(final_list))
