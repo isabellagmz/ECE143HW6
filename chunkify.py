@@ -29,7 +29,8 @@ def split_by_n(fname,n=3):
     # get size of sub-files
     file_size = os.path.getsize(fname) # check size of original file
     nth_file_size = int(file_size / n) # approximate size of each sub-file
-    # print(nth_file_size)
+    print(nth_file_size)
+    print('\n')
     file_index = 0
 
     # number of files we need
@@ -44,7 +45,9 @@ def split_by_n(fname,n=3):
             sub_files.write(lines)
             if line_size >= nth_file_size and file_index != n-1:
                 break
-        # print(os.path.getsize(sub_file_name))
+        print(line_size)
+        print(os.path.getsize(sub_file_name))
+        print('\n')
         file_index = file_index + 1  # increase index
         sub_files.close() # close sub-file
 

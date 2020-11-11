@@ -54,7 +54,7 @@ def encrypt_message(message,fname):
         for i in range(len(list_of_words)):
             for j in range(len(list_of_words[i])):
                 if message_list[k] == list_of_words[i][j]:
-                    temp.append((i,j))
+                    temp.append((i+1,j+1))
         # generating a random number
         rand_int = randint(0,len(temp)-1)
         final_list.append(temp[rand_int])
@@ -110,10 +110,11 @@ def decrypt_message(inlist,fname):
                     word[j] = word[j].replace(char, "")
         list_of_words.append(word)
 
+
     # store the word in the return message
     final_string = ''
     for tup in range(len(inlist)):
-        string = list_of_words[inlist[tup][0]][inlist[tup][1]]
+        string = list_of_words[inlist[tup][0]-1][inlist[tup][1]-1]
         final_string = final_string + string + ' '
 
     #close file
