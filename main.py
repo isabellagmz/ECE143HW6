@@ -15,5 +15,5 @@ if __name__ == '__main__':
     # print(multinomial_sample(10,[1/3,1/3,1/3],k=10))
     #print(split_by_n("/Users/isabellagomez/Documents/ECE143/metamorphosis.txt", 3))
     message ="let us not say we met late at the night about the secret"
-    #print(encrypt_message(message,fname))
-    print(decrypt_message(encrypt_message(message, fname), fname))
+    print(encrypt_message('let us not say we met late at the night about the secret vermin bedding familiar proper',fname))
+    print(decrypt_message([(1394, 2), (1775, 4), (613, 5), (940, 10), (1741, 1), (1192, 5), (732, 5), (849, 2), (207, 10), (382, 2), (1977, 2), (271, 1), (850, 3), (48, 9), (51, 3), (574, 3), (284, 6)], fname))

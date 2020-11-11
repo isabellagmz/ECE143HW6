@@ -55,9 +55,18 @@ def encrypt_message(message,fname):
             for j in range(len(list_of_words[i])):
                 if message_list[k] == list_of_words[i][j]:
                     temp.append((i+1,j+1))
-        # generating a random number
-        rand_int = randint(0,len(temp)-1)
-        final_list.append(temp[rand_int])
+
+        in_list = True
+        while in_list:
+            try:
+                # generating a random number
+                rand_int = randint(0,len(temp)-1)
+                # check that entry is not in list
+                if temp[rand_int] not in final_list:
+                    final_list.append(temp[rand_int])
+                    in_list = False
+            except ValueError:
+                None
         # empty temp
         temp = []
 
@@ -109,7 +118,6 @@ def decrypt_message(inlist,fname):
                 if char in punctuations:
                     word[j] = word[j].replace(char, "")
         list_of_words.append(word)
-
 
     # store the word in the return message
     final_string = ''
