@@ -131,4 +131,6 @@ def decrypt_message(inlist,fname):
     #close file
     file.close()
 
+    final_string = final_string.rstrip()
+
     return final_string
