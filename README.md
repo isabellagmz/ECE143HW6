@@ -6,6 +6,6 @@ The files are:
 
 - README.md
 - chunkify.py
-- encrypted.py
+- encrypted.py (done)
 - multinomial.py
 - main.py
