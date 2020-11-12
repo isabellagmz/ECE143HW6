@@ -12,8 +12,8 @@ class Homework6:
 if __name__ == '__main__':
     my_Homework6 = Homework6()
     fname = "/Users/isabellagomez/Documents/ECE143/metamorphosis.txt"
-    # print(multinomial_sample(10,[1/3,1/3,1/3],k=10))
-    print(split_by_n("/Users/isabellagomez/Documents/ECE143/metamorphosis.txt", 3))
+    print(multinomial_sample(10,[1/3,1/3,1/3],k=3))
+    # print(split_by_n("/Users/isabellagomez/Documents/ECE143/metamorphosis.txt", 3))
     #message ="let us not say we met late at the night about the secret"
     #print(encrypt_message(message,fname))
     #print(decrypt_message(encrypt_message(message,fname), fname))
